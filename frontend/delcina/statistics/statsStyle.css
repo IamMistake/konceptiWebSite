@@ -1,22 +1,3 @@
-:root {
-    --text: #ffffff;
-    --background: #d4dace;
-    --primary: #345043;
-    --secondary: #648274;
-    --accent: #aec1b5;
-}
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-
-    background: var(--primary);
-    color: var(--text);
-    font-family: 'Poppins', ui-sans-serif;
-}
-
 .statistics {
     width: 100vw;
     height: 100vh;

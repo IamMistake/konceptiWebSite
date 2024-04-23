@@ -1,21 +1,4 @@
-:root {
-    --text: #ffffff;
-    --background: #e2e4d8;
-    --primary: #345043;
-    --secondary: #648274;
-    --accent: #aec1b5;
-}
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-
-    background: var(--accent);
-    color: var(--text);
-}
-.dim {
+.perksDim {
     content: '';
     /*position: absolute;*/
     /*top: 0;*/

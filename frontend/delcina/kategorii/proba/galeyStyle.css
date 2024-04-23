@@ -1,21 +1,7 @@
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-
-    background: var(--accent);
-    color: var(--text);
-}
 #kategorii {
     margin-top: 20vh;
     width: 100vw;
     height: 60vh;
-
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: flex-start;*/
 }
 
 .gallery  {
@@ -26,7 +12,6 @@ body {
 
     display: grid;
     overflow: hidden;
-    /*-webkit-mask: linear-gradient(90deg,#0000,#000 10% 90%,#0000);*/
 }
 .gallery > img {
     grid-area: 1/1;

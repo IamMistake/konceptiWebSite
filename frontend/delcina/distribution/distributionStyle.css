@@ -1,28 +1,9 @@
-:root {
-    --text: #ffffff;
-    --background: #e2e4d8;
-    --primary: #345043;
-    --secondary: #648274;
-    --accent: #aec1b5;
-}
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-
-    background: var(--accent);
-    color: var(--text);
-}
-
-
 .distribution {
     /*margin-top: 5vh;*/
     width: 100vw;
     height: 100vh;
 
-    background: var(--primary);
+    background: var(--background);
 
     display: flex;
     justify-content: space-evenly;
@@ -41,6 +22,7 @@ body {
     margin-top: 0;
     height: 10%;
     font-size: 5rem;
+    color: var(--header);
 }
 .distInfo .textBox {
     width: 100%;
@@ -57,7 +39,7 @@ body {
 }
 .distInfo .textBox h4 {
     font-size: 2.5rem;
-    color: var(--text);
+    color: var(--header);
     font-family: 'Poppins', ui-sans-serif;
 
     margin: 0;

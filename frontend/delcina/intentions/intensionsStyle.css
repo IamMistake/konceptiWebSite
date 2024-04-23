@@ -1,27 +1,8 @@
-:root {
-    --text: #ffffff;
-    --background: #e2e4d8;
-    --primary: #345043;
-    --secondary: #648274;
-    --accent: #aec1b5;
-}
-body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-
-    background: var(--accent);
-    color: var(--text);
-}
-
-
 .middleText {
     width: 20%;
     font-family: 'Poppins', ui-sans-serif;
     text-align: center;
-    color: darkgoldenrod;
+    color: var(--header);
 }
 .middleText i {
     font-size: 2rem;
@@ -42,7 +23,7 @@ body {
     height: 50vh;
 
     background: var(--background);
-    color: darkgoldenrod;
+    color: var(--header);
     font-family: 'Poppins', ui-sans-serif;
     text-align: center;
     /*font-weight: bold;*/
@@ -59,6 +40,4 @@ body {
 #intensions #intensionsTexts {
     display: flex;
     justify-content: space-evenly;
-
-    /*background: red;*/
 }
