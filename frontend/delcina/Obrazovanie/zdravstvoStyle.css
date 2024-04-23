@@ -1,0 +1,71 @@
+:root {
+    --text: #101916;
+    --background: #e2e4d8;
+    --primary: #345043;
+    --secondary: #648274;
+    --accent: #aec1b5;
+}
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+
+    display: flex;
+
+    background: var(--accent);
+    color: var(--text);
+}
+
+#zdrBg {
+    width: 100vw;
+    height: 100vh;
+
+    background: url("img/zdravstvo.jpg");
+    background-size: cover;
+    /*background-position: ;*/
+
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+#zdrBg #zdrText h1{
+    margin-top: 5%;
+    text-transform: uppercase;
+    color: white;
+    font-size: 17rem;
+    font-family: 'Poppins', ui-sans-serif;
+    text-shadow: -20px 20px 40px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+}
+#zdrBg #zdrText h2 i{
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: -20px 20px 40px rgba(0, 0, 0, 0.8);
+
+    margin-left: 2%;
+}
+#zdrBg #zdrText h2 {
+    margin-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#zdrObj {
+    width: 100vw;
+    height: 100vh;
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("img/zdravstvoObj.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-position 0.5s ease-in;
+}
+#zdrObj:hover {
+    background-position: 0 5%;
+    transition: background-position 0.5s ease-in;
+}
