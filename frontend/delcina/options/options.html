@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Options</title>
-    <link rel="stylesheet" href="optionsStyle.css">
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/7c76916ab4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="optionsStyle.css">
     <link rel="stylesheet" href="../0starter.css">
+    <link rel="stylesheet" href="optionsTimelineStil.css">
 </head>
 <body>
 
@@ -16,7 +21,7 @@
         <div onclick="changeDisplay(this)" class="option last">Statistics</div>
     </div>
     <div class="optionsDisplay">
-        <div style="font-size: 5rem">Locations</div>
+        <div id="optionsMapLoc"></div>
     </div>
 </div>
 

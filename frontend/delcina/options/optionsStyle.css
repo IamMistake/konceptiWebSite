@@ -95,3 +95,19 @@
 #statisticsOption #optionsStatisticsList .selected i {
     color: var(--header);
 }
+
+
+
+
+#optionsMapLoc {
+    margin-top: 1%;
+    margin-left: 2.5%;
+    width: 95%;
+    height: 95%;
+
+    background: var(--background);
+    color: red;
+}
+
+/*IMPLEMENT THE optionsTimelineStil*/
+/*IMPLEMENT THE optionsTimelineStil*/
