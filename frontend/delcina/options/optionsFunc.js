@@ -1,6 +1,5 @@
 const optionsDisplay = document.getElementsByClassName('optionsDisplay')[0]
 const displays = {
-    // "Locations": `<div style="font-size: 5rem">Locations</div>`,
     "Locations": `<div id="optionsMapLoc"></div>`,
     "Area": `<div style="font-size: 5rem">Area</div>`,
     "Statistics": `<div id="statisticsOption">
@@ -16,8 +15,8 @@ const displays = {
             </div>
         </div>`,
 }
+const minSize = Math.min(optionsDisplay.offsetWidth, optionsDisplay.offsetHeight) * 0.9 // GOLEMINA na piechart
 const statDisplays = {
-    // "timeline": `<div style="font-size: 5rem">bars</div>`,
     "timeline": `<div class="timeline">
     <div class="timelineDim">
         <div class="indent">
@@ -67,7 +66,12 @@ const statDisplays = {
     </div>
 </div>`,
     "pillars": `<div style="font-size: 5rem">Pillar</div>`,
-    "pie": `<div style="font-size: 5rem">pie</div>`,
+    "pie": `<div id="optionsPieChart" class="flex">
+                <div id="optionsPieChartText" class="flex">
+                    <h1>Legend</h1>
+                </div>
+                <svg width="${minSize}" height="${minSize}" id="pie-chart"></svg>
+            </div>`,
     "graph": `<div style="font-size: 5rem">graph</div>`,
     "notes": `<div style="font-size: 5rem">notes</div>`,
 }
@@ -108,6 +112,10 @@ function displayStat(btn, stat) {
 
     const optDis = document.getElementById('optionsStatistics')
     optDis.innerHTML = statDisplays[stat]
+
+    if (stat === 'pie') {
+        spawnPieChart()
+    }
 }
 
 
@@ -144,3 +152,106 @@ function spawnMap() {
     }
 }
 spawnMap()
+
+
+
+
+
+// MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART
+// MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART
+function putDataInLegend(pieData) {
+    const putin = document.getElementById('optionsPieChartText')
+    let sum = pieData.map(x => x.value).reduce((a, b) => a + b);
+    let percentages = []
+    pieData.forEach(data => {
+        if (data.value !== 0) {
+            let perc = parseInt((data.value / sum) * 100)
+            percentages.push(perc)
+            putin.innerHTML += `<div>${data.label}: value=${data.value}, percentage=${perc}%</div>`
+        }
+    })
+
+    // TO GET TO 100%
+    let percSum = percentages.reduce((a,b) => a + b)
+    if (percSum !== 100) {
+        let elem = putin.getElementsByTagName('div')[0];
+        let innerHTML = elem.innerText
+        let tmp = innerHTML.substring(0, innerHTML.length - 1 - percentages[0].toString().length);
+        let newVar = 100 - percSum + percentages[0];
+        elem.innerText = tmp + newVar.toString() + "%"
+    }
+
+}
+
+// MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART MAKE PIE CHART
+function spawnPieChart() {
+    // Sample data for the pie chart
+    const pieData = [
+        { label: 'M', value: 0 },
+        { label: 'Skopje', value: 80 },
+        { label: 'Prilep', value: 30 },
+        { label: 'Bitola', value: 30 },
+        { label: 'Ohrid', value: 35 }
+    ];
+    putDataInLegend(pieData)
+
+// Set up dimensions and radius for the pie chart
+    const width = minSize;
+    const height = minSize;
+    const radius = Math.min(width, height) / 2;
+
+// Set up color scale with green shades
+    const color = d3.scaleOrdinal()
+        .domain(pieData.map(d => d.label))
+        .range(d3.schemeGreens[pieData.length]);         //MENUVAJNE NA BOJA
+
+// Create the pie chart layout
+    const pie = d3.pie()
+        .value(d => d.value)
+        .sort(null);
+
+// Define arc generator
+    const arc = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius);
+
+// Create SVG element
+    const svg = d3.select("#pie-chart")
+        .append("g")
+        .attr("transform", `translate(${width / 2},${height / 2})`);
+
+// Draw the pie chart
+    const arcs = svg.selectAll(".arc")
+        .data(pie(pieData))
+        .enter()
+        .append("g")
+        .attr("class", "arc");
+
+// Add gradients
+    const gradients = arcs.append("linearGradient")
+        .attr("id", (d, i) => `gradient${i}`)
+        .attr("gradientUnits", "userSpaceOnUse")
+        .attr("x1", 0)
+        .attr("y1", 0)
+        .attr("x2", "100%")
+        .attr("y2", "100%");
+
+    gradients.append("stop")
+        .attr("offset", "0%")
+        .attr("stop-color", (d, i) => d3.rgb(color(i)).brighter(0));
+
+    gradients.append("stop")
+        .attr("offset", "100%")
+        .attr("stop-color", color);
+
+    arcs.append("path")
+        .attr("d", arc)
+        .attr("fill", (d, i) => `url(#gradient${i})`);
+
+// Add labels to each slice
+    arcs.append("text")
+        .attr("transform", d => `translate(${arc.centroid(d)})`)
+        .attr("text-anchor", "middle")
+        .text(d => d.data.label)
+        .attr("class", "slice");
+}

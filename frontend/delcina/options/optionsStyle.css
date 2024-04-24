@@ -111,3 +111,47 @@
 
 /*IMPLEMENT THE optionsTimelineStil*/
 /*IMPLEMENT THE optionsTimelineStil*/
+
+
+/*PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART*/
+/*PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART*/
+/*PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART PIC CHART*/
+#pie-chart {
+    margin-top: 2%;
+    color: var(--header);
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Poppins', ui-sans-serif;
+}
+
+#optionsPieChart {
+    justify-content: space-evenly;
+}
+#optionsPieChartText {
+    background: var(--background);
+
+    flex-direction: column;
+    border-left: var(--accent) 0.4rem solid;
+    border-bottom: var(--accent) 0.4rem solid;
+    border-radius: 5%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+#optionsPieChartText > * {
+    color: var(--text);
+    /*color: var(--text);*/
+    margin: 5px 0;
+
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Poppins', ui-sans-serif;
+}
+#optionsPieChartText h1 {
+    border-bottom: solid 0.2rem var(--header);
+    text-decoration: underline;
+
+    margin-top: 0;
+    margin-bottom: 1.4rem;
+    color: var(--header);
+    font-size: 3rem;
+}
