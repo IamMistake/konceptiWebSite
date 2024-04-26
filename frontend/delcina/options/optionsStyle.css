@@ -72,7 +72,7 @@
     width: 96%;
     height: 100%;
 
-    background: var(--primary);
+    background: var(--secondary);
 }
 #statisticsOption #optionsStatisticsList {
     width: 4%;
