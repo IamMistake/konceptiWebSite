@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../CSSs/zdravstvoStil.css">
     <link rel="stylesheet" href="../CSSs/menu.css">
     <link rel="stylesheet" href="../CSSs/statStil.css">
+    <link rel="stylesheet" href="../CSSs/optionsTimelineStil.css">
+    <link rel="stylesheet" href="../CSSs/optionsStil.css">
 </head>
 <body>
 
@@ -40,6 +42,17 @@
         </div>
         <div class="stats">
             <canvas id="stats" width="30" height="15"></canvas>
+        </div>
+    </div>
+
+    <div class="optionsContainer">
+        <div class="options">
+            <div onclick="changeDisplay(this)" class="option displayed">Locations</div>
+            <!--        <div onclick="changeDisplay(this)" class="option">Area</div>-->
+            <div onclick="changeDisplay(this)" class="option last">Statistics</div>
+        </div>
+        <div class="optionsDisplay">
+            <div id="optionsMapLoc"></div>
         </div>
     </div>
 </main>
@@ -84,6 +97,7 @@
 
 <script src="../JAVASCRIPTs/menu.js"></script>
 <script src="../JAVASCRIPTs/statsFunc.js"></script>
+<script src="../JAVASCRIPTs/optionsFunctions.js"></script>
 
 </body>
 </html>

@@ -46,5 +46,5 @@
     display: flex;
     justify-content: center;
 
-    background: var(--secondary);
+    background: var(--accent);
 }
