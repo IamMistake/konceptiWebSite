@@ -1,7 +1,9 @@
 #aboutSchoolContainer {
-    margin: 2.5vh 0 0 2.5vw;
+    margin: 2.5vh 0 2.5vh 2.5vw;
     width: 95vw;
     height: 95vh;
+
+    display: none;
 }
 
 #aboutSchoolTop {
@@ -12,6 +14,7 @@
     /*background: var(--accent);*/
     margin-bottom: 1.5%;
 }
+
 #aboutSchoolBottom {
     width: 100%;
     height: 38.5%;
@@ -25,6 +28,7 @@
     height: 100%;
     margin-right: 1.5%;
 }
+
 #loc {
     position: absolute;
     z-index: 1;
@@ -34,10 +38,12 @@
     border: solid 0.4rem var(--secondary);
     border-radius: 5%;
 }
+
 #schoolLocation #loc i {
     font-size: 2rem;
     color: var(--header);
 }
+
 #schoolLocationMap {
     width: 100%;
     height: 100%;
@@ -46,8 +52,6 @@
     background: var(--background);
     color: red;
 }
-
-
 
 
 #aboutSchoolLilContainer {
@@ -63,23 +67,28 @@
     border-bottom: solid 0.4rem var(--secondary);
     border-radius: 5%;
 }
+
 #aboutSchool {
     width: 100%;
     height: 60%;
 }
+
 #aboutSchool h3 {
     margin-top: 8%;
     text-decoration: underline;
     /*font-size: 3rem;*/
 }
+
 #aboutSchool p {
     margin: 0 5% 3% 5%;
     text-align: left;
     font-size: 1.4rem;
 }
+
 #aboutSchool p i {
     margin-right: 5%;
 }
+
 #schools {
     width: 100%;
     height: 25%;
@@ -87,10 +96,11 @@
     border-top: dashed 0.25rem var(--secondary);
     border-radius: 7%;
     background: var(--primary);
-                        /*OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA    DISPLAY FLEX TREBA DA E*/
-    display: flex;
+    /*OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA OVDE GRESKA    DISPLAY FLEX TREBA DA E*/
+    display: none;
     flex-wrap: wrap;
 }
+
 #schools .schoolsSchool {
     width: 46%;
 
@@ -100,17 +110,16 @@
     border-radius: 5%;
     margin: 2%;
 }
+
 #schools .schoolsSchool:hover {
     text-decoration: underline;
     background: var(--secondary);
 }
+
 #schools .schoolsActive {
     text-decoration: underline;
     background: var(--secondary);
 }
-
-
-
 
 
 /*BOTTOM BOTTOM BOTTOM BOTTOM BOTTOM BOTTOM BOTTOM*/
@@ -122,6 +131,7 @@
 
     /*background: greenyellow;*/
 }
+
 #aboutSchoolOptionsGraph {
     background: var(--accent);
     border-left: solid 0.5rem var(--primary);
@@ -136,6 +146,7 @@
     /*background: red;*/
     margin-right: 1.5%;
 }
+
 #studentGrowthChart {
     background: var(--accent);
     border-left: solid 0.5rem var(--primary);
@@ -144,13 +155,13 @@
 }
 
 
-
 #studentPieChart {
     height: 100%;
     width: 27%;
 
     /*background: blue;*/
 }
+
 #schoolPopulationChart {
     background: var(--accent);
     border-left: solid 0.5rem var(--primary);

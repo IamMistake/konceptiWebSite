@@ -1,0 +1,29 @@
+#disjoint-graph {
+    width: 99vw;
+    height: 99vh;
+
+    /*margin: 10vh 20vw;*/
+}
+
+#disjoint-graph text {
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    /*fill: #fff;*/
+    color: var(--text);
+}
+
+.node circle {
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+.node text {
+    pointer-events: none;
+    font-size: 10px;
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+}

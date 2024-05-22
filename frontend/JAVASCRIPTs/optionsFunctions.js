@@ -199,7 +199,7 @@ function spawnPieChart() {
 // Set up color scale with green shades
     const color = d3.scaleOrdinal()
         .domain(pieData.map(d => d.label))
-        .range(d3.schemeGreens[pieData.length]);         //MENUVAJNE NA BOJA
+        .range(d3.schemeOranges[pieData.length]);         //MENUVAJNE NA BOJA
 
 // Create the pie chart layout
     const pie = d3.pie()

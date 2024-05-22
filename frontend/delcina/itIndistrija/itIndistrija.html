@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>itIndistrija</title>
+
+    <script src="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.umd.min.js"></script>
+    <link href="https://cdn.maptiler.com/maptiler-sdk-js/v1.2.0/maptiler-sdk.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/7c76916ab4.js" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link rel="stylesheet" href="../0starter.css">
+    <link rel="stylesheet" href="itIndistrijaStyle.css">
+    <link rel="stylesheet" href="aboutCompanyStyle.css">
+</head>
+<body>
+
+<div id="comapaniesName">
+    <svg width="1200" height="500" id="bubble-chart"></svg>
+</div>
+<div id="aboutSchoolContainer">
+    <div id="aboutSchoolTop">
+        <div id="schoolLocation">
+            <div id="loc" class="flex"><i class="fa-solid fa-location-dot"> Location</i></div>
+            <div id="schoolLocationMap"></div>
+        </div>
+        <div id="aboutSchoolLilContainer">
+            <div id="aboutSchool" class="middleText">
+                <h3>About School</h3>
+                <p><i class="fa-solid fa-school"></i> Scool Location: Karpos 1, Skopje</p>
+                <p><i class="fa-solid fa-user"></i> Students: 1000</p>
+                <p><i class="fa-solid fa-chalkboard-user"></i> Teachers: 100</p>
+                <p><i class="fa-solid fa-book"></i> Average Subjects per year: 11.5</p>
+                <p>For every student there is 0.1 teachers</p>
+            </div>
+<!--            <div id="schools">-->
+<!--            </div>-->
+        </div>
+    </div>
+    <div id="aboutSchoolBottom">
+        <div id="studentTeacherPillar">
+            <canvas id="aboutSchoolOptionsGraph" width="30" height="30"></canvas>
+        </div>
+        <div id="studentGrowth">
+            <canvas id="studentGrowthChart" width="300" height="300"></canvas>
+        </div>
+        <div id="studentPieChart">
+            <canvas id="schoolPopulationChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="../fetchFunc.js"></script>
+<script src="itIndistrijaFunc.js"></script>
+<script src="aboutCompanyFunc.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+#donut-chart text {
+    font-size: 16pt;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    /*fill: #fff;*/
+    color: var(--text);
+}

@@ -1,10 +1,16 @@
 :root {
-    --text: #101916;
+    /*--text: #101916;*/
     --header: #B8860BFF;
-    --background: #e2e4d8;
-    --primary: #345043;
-    --secondary: #648274;
-    --accent: #aec1b5;
+    /*--background: #e2e4d8;*/
+    /*--primary: #345043;*/
+    /*--secondary: #648274;*/
+    /*--accent: #aec1b5;*/
+
+    --text: #000000;
+    --background: #f5f5f5;
+    --primary: #ccb9ac;
+    --secondary: #d8c9ba;
+    --accent: #e5e1d8;
 }
 body {
     padding: 0;
@@ -59,4 +65,19 @@ body {
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(1.5px);
     /*background: linear-gradient(rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0));*/
+}
+
+
+
+
+.cabin-sketch-regular {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cabin-sketch-bold {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }

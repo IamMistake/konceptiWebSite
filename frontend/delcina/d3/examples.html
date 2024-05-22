@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3.js testing</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+
+<svg id="svg-container" width="900" height="900"></svg>
+<script>
+
+    window.onload = function () {
+
+        const svg = d3.select("#svg-container");
+        const data = generateRandomData(50, 5, 50);
+        const containerRadius = 200;
+
+        // Create a force simulation
+        const simulation = d3.forceSimulation(data)
+            .force("center", d3.forceCenter(300, 300)) // Center of the SVG
+            .force("gravity", d3.forceRadial(containerRadius / 2, 100, 100)) // Gravity towards the center
+            .force("collide", d3.forceCollide().radius(d => d.radius + 2)) // Collision detection
+
+        // Append the container circle
+        svg.append("circle")
+            .attr("cx", 300)
+            .attr("cy", 300)
+            .attr("r", containerRadius)
+            .attr("fill", "none")
+            .attr("stroke", "black");
+
+        // Append the smaller circles inside the container
+        const circles = svg.selectAll("circle.dot")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("class", "dot")
+            .attr("cx", 300)
+            .attr("cy", 300)
+            .attr("r", x => x.radius)
+            .attr("fill", "red")
+            .attr("opacity", 0.7);
+
+        // Append text showing the radius value in the center of each circle
+        svg.selectAll("text")
+            .data(data)
+            .enter()
+            .append("text")
+            .attr("x", 300)
+            .attr("y", 300)
+            .attr("text-anchor", "middle")
+            .attr("alignment-baseline", "middle")
+            .text(d => d.radius)
+            .style("font-size", "10px")
+            .style("fill", "black");
+
+        // Update circle positions in the simulations
+        simulation.on("tick", () => {
+            circles.attr("cx", d => Math.max(containerRadius, Math.min(600 - containerRadius, d.x)))
+                .attr("cy", d => Math.max(containerRadius, Math.min(600 - containerRadius, d.y)));
+            svg.selectAll("text")
+                .attr("x", d => Math.max(containerRadius, Math.min(600 - containerRadius, d.x)))
+                .attr("y", d => Math.max(containerRadius, Math.min(600 - containerRadius, d.y)));
+        });
+
+    }
+
+    const generateRandomData = (count, minRadius, maxRadius) => {
+        const data = [];
+        for (let i = 0; i < count; i++) {
+            const radius = Math.floor(Math.random() * (maxRadius - minRadius + 1) + minRadius);
+            data.push({radius});
+        }
+        return data;
+    }
+
+</script>
+
+</body>
+</html>

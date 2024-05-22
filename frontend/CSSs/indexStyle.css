@@ -1,10 +1,17 @@
 :root {
-    --text: #101916;
+    /*--text: #101916;*/
     --header: #B8860BFF;
-    --background: #e2e4d8;
-    --primary: #345043;
-    --secondary: rgb(100, 130, 116);
-    --accent: #aec1b5;
+    /*--background: #e2e4d8;*/
+    /*--primary: #345043;*/
+    /*--secondary: rgb(100, 130, 116);*/
+    /*--accent: #aec1b5;*/
+
+    --text: #000000;
+    --background: #f5f5f5;
+    --primary: #ccb9ac;
+    --secondary: #d8c9ba;
+    --accent: #e5e1d8;
+
 }
 
 body {
@@ -70,4 +77,18 @@ main {
     width: 100vw;
     /*height: 1000px;*/
     background: var(--background);
+}
+
+
+
+.cabin-sketch-regular {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.cabin-sketch-bold {
+    font-family: "Cabin Sketch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
